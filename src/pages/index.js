@@ -9,8 +9,6 @@ export default function Home({products}) {
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-
       <Header />
 
       <main className='max-w-screen-2xl mx-auto'>
