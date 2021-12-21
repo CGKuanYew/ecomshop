@@ -9,7 +9,7 @@ import {useSession} from "next-auth/react";
 import {loadStripe} from "@stripe/stripe-js"
 import axios from 'axios'
 
-const stripePromise = loadStripe(process.env.STRIPE_PUBLIC_KEY);
+const stripePromise = loadStripe(process.env.stripe_public_key);
 
 function Checkout() {
     const items = useSelector(selectItems);
@@ -23,7 +23,7 @@ function Checkout() {
         const checkoutSession = await axios.post('/api/create-checkout-session',
         {
             items: items,
-            email:session.user.email,
+            email:"conrad.goh.1990@gmail.com",
 
         })
 
@@ -86,19 +86,19 @@ function Checkout() {
                         </span> 
                     </h2>
 
-                        <button 
+                        {/* <button 
                         role="link"
                         onClick={createCheckoutSession}
                         disabled={!session}
                         className={`buttonDesign mt-2 ${!session && 'from-gray-300 to-gray-500 border-gray-200 text-gray-300 cursor-not-allowed'}`}>
                             {!session?"Sign in to checkout" : "Proceed to checkout"}
-                        </button>
+                        </button> */}
 
-                        {/* <button 
+                        <button 
                         role="link"
                         onClick={createCheckoutSession}
                         className="buttonDesign mt-2"
-                        >Proceed to Check Out </button> */}
+                        >Proceed to Check Out </button>
                     </>
                 )}
             </div>

@@ -33,8 +33,9 @@ hasPrime,
     };
 
     const removeItemFromBasket = () => {
-        dispatch(removeFromBasket({id}))
-    }
+        dispatch(removeFromBasket({id})
+        
+        )}
 
     return (
         <div className='grid grid-cols-5'>
