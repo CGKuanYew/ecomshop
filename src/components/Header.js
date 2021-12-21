@@ -14,7 +14,7 @@ import {selectItems} from "../slices/basketSlice";
 
 function Header() {
 
-    const {data : session} = useSession();
+    const {data : session,status} = useSession();
     const router = useRouter();
     const items = useSelector(selectItems);
     
@@ -41,7 +41,7 @@ function Header() {
 
             {/* Right */}
             <div className='text-white flex items-center text-xs space-x-6 mx-6 whitespace-nowrap'>
-                <div onClick={!session ? signIn : signOut} className="link">
+                <div onClick={!session ? signIn : signOut} className="link" >
                     <p className="hover:underline">
                     {session ? `Hello, ${session.user.name}` : 'Sign In'}
                     </p>
