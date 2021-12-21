@@ -23,7 +23,7 @@ function Checkout() {
         const checkoutSession = await axios.post('/api/create-checkout-session',
         {
             items: items,
-            email:"conradgoh.fms@gmail.comm",
+            email:"conradgoh.fms@gmail.com",
         })
 
         //Redirect user/customer to Stripe Checkout
@@ -85,19 +85,19 @@ function Checkout() {
                         </span> 
                     </h2>
 
-                        {/* <button 
+                        <button 
                         role="link"
                         onClick={createCheckoutSession}
                         disabled={!session}
                         className={`buttonDesign mt-2 ${!session && 'from-gray-300 to-gray-500 border-gray-200 text-gray-300 cursor-not-allowed'}`}>
                             {!session?"Sign in to checkout" : "Proceed to checkout"}
-                        </button> */}
+                        </button>
 
-                        <button 
+                        {/* <button 
                         role="link"
                         onClick={createCheckoutSession}
                         className="buttonDesign mt-2"
-                        >Proceed to Check Out </button>
+                        >Proceed to Check Out </button> */}
                     </>
                 )}
             </div>
