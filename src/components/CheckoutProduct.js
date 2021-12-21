@@ -33,8 +33,6 @@ hasPrime,
     };
 
     const removeItemFromBasket = () => {
-
-
         dispatch(removeFromBasket({id}))
     }
 
