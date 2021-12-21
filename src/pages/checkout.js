@@ -23,7 +23,7 @@ function Checkout() {
         const checkoutSession = await axios.post('/api/create-checkout-session',
         {
             items: items,
-            email: "conradgoh.fms@gmail.comm",
+            email:"conradgoh.fms@gmail.comm",
         })
 
         //Redirect user/customer to Stripe Checkout
