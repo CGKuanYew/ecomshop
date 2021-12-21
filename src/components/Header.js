@@ -41,11 +41,11 @@ function Header() {
 
             {/* Right */}
             <div className='text-white flex items-center text-xs space-x-6 mx-6 whitespace-nowrap'>
-                {/* <div onClick={!session ? signIn : signOut} className="link" > */}
-                <div>
+                <div onClick={!session ? signIn : signOut} className="link" >
+                {/* <div> */}
                     <p className="hover:underline">
                         Hello Guest
-                    {/* {session ? `Hello, ${session.user.name}` : 'Sign In'} */}
+                    {session ? `Hello, ${session.user.name}` : 'Sign In'}
                     </p>
                     <p className="smText">Account & Lists</p>
                 </div>
