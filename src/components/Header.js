@@ -10,14 +10,12 @@ import {useRouter} from "next/router";
 import {useSelector} from "react-redux";
 import {selectItems} from "../slices/basketSlice";
 
-
-
 function Header() {
 
     const {data : session,status} = useSession();
     const router = useRouter();
     const items = useSelector(selectItems);
-    
+    console.log(session);   
     return (
         <header className="sticky top-0 z-50">
           <div className="flex items-center bg-amazon_blue p-1 flex-grow py-2">
@@ -38,17 +36,18 @@ function Header() {
                 <input className='p-2 h-full w-6 flex-grow rounded-l-md flex-shrink focus:outline-none px-4' type="text" />
                 <SearchIcon className="h-12 p-4" />
             </div>
-
+            
             {/* Right */}
             <div className='text-white flex items-center text-xs space-x-6 mx-6 whitespace-nowrap'>
                 <div onClick={!session ? signIn : signOut} className="link" >
+                    
                 {/* <div> */}
                     <p className="hover:underline">
-                        Hello Guest
                     {session ? `Hello, ${session.user.name}` : 'Sign In'}
                     </p>
                     <p className="smText">Account & Lists</p>
                 </div>
+                
 
                 <div className="link">
                     <p>Returns</p>

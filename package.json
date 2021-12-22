@@ -13,7 +13,7 @@
     "@tailwindcss/line-clamp": "^0.2.2",
     "axios": "^0.24.0",
     "babel-preset-es2015": "^6.24.1",
-    "firebase": "^9.6.0",
+    "firebase": "^9.1.2",
     "firebase-admin": "^10.0.0",
     "micro": "^9.3.4",
     "moment": "^2.29.1",

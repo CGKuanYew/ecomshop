@@ -8,24 +8,13 @@ export default NextAuth({
     GoogleProvider({
         clientId: process.env.GOOGLE_ID,
         clientSecret: process.env.GOOGLE_SECRET,
-        authorizationUrl:
-        'https://accounts.google.com/o/oauth2/v2/auth?prompt=consent&access_type=offline&response_type=code',
-
-        callbacks: {
-          async signIn({ user, account, profile, email, credentials }) {
-            const isAllowedToSignIn = true
-            if (isAllowedToSignIn) {
-              return true
-            } else {
-              // Return false to display a default error message
-              return false
-              // Or you can return a URL to redirect to:
-              // return '/unauthorized'
-            }
-          }
-        }
-    
-    
+        session: {
+          strategy: 'jwt',
+        },
+        jwt: {
+          secret: process.env.JWT_SECRET,
+          maxAge: 30 * 24 * 60 * 60, // 30 days
+        },
       }),
 
     FacebookProvider({
